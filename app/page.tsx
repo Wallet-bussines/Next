@@ -1,6 +1,6 @@
-import { PayBlock } from "@/components/Pay";
-import Link from "next/link";
-import { Home, DollarSign, MessageCircle } from "lucide-react";
+import { PayBlock } from "@/components/Pay"
+import Link from "next/link"
+import { Home, DollarSign, MessageCircle } from "lucide-react"
 
 export default function Home() {
   return (
@@ -26,5 +26,5 @@ export default function Home() {
         </a>
       </nav>
     </>
-  );
+  )
 }
