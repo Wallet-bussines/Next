@@ -1,13 +1,10 @@
-import { PayBlock } from "@/components/Pay"
+// pages/test.tsx
 import Navbar from "@/components/Navbar/Navbar"
 
-export default function Home() {
+export default function TestPage() {
   return (
-    <>
-      <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-y-3 pb-20">
-        <PayBlock />
-      </main>
+    <div>
       <Navbar />
-    </>
+    </div>
   )
 }
