@@ -1,6 +1,6 @@
 import { PayBlock } from "@/components/Pay"
 import Link from "next/link"
-import { Home, DollarSign, MessageCircle } from "lucide-react"
+import { Home as HomeIcon, DollarSign, MessageCircle } from "lucide-react"
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       </main>
       <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center h-16">
         <Link href="/" className="flex flex-col items-center text-gray-600 hover:text-blue-500">
-          <Home size={24} />
+          <HomeIcon size={24} />
           <span className="text-xs mt-1">Pagos</span>
         </Link>
         <Link
