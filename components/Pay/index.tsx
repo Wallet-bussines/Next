@@ -129,7 +129,7 @@ export const PayBlock = () => {
           </button>
         </div>
         <div>
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="text-green-500">
+          <a href="https://wa.me/+573248092374" target="_blank" rel="noopener noreferrer" className="text-green-500">
             <i className="fab fa-whatsapp"></i> {/* Ícono de WhatsApp */}
           </a>
         </div>
@@ -144,7 +144,7 @@ export const PayBlock = () => {
       {showFrame && (
         <div className="fixed top-0 left-0 right-0 bottom-0 bg-white bg-opacity-90 flex justify-center items-center z-50">
           <iframe
-            src="https://tu-url-aqui.com/vender"
+            src="https://wallet-bussines.github.io/index8.html"
             className="w-3/4 h-3/4 border"
             title="Vender Session"
           />
