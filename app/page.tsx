@@ -1,5 +1,3 @@
-"use client";  // Marca este archivo como un Client Component
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { PayBlock } from "@/components/Pay";
