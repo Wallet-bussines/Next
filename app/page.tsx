@@ -6,10 +6,11 @@ import { PayBlock } from "@/components/Pay";
 
 export default function Home() {
   const router = useRouter();
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState<
+    { description: string; amount: number; token: string; date: string }[]
+  >([]);
   const [showIframe, setShowIframe] = useState(false);
   const [currentSection, setCurrentSection] = useState("home");
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const handleVerification = () => {
     window.location.href = "https://twdnrdzqthbdikjy.vercel.app/";
@@ -42,21 +43,14 @@ export default function Home() {
     setCurrentSection(section);
   };
 
-  const handleVideoSelect = (videoId: string) => {
-    setSelectedVideo(videoId);
-  };
-
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-blue-600 text-white p-4 text-center">
         <h1 className="text-2xl font-bold">Orbital-X</h1>
-        <p className="text-sm">
-          Realiza pagos, verifica tu identidad o vende fácilmente.
-        </p>
+        <p className="text-sm">Realiza pagos, verifica tu identidad o vende fácilmente</p>
       </header>
 
       <main className="flex-grow p-8">
-        {/* Secciones de contenido */}
         {currentSection === "home" && (
           <section className="bg-gray-100 p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4">¿Qué deseas hacer?</h2>
@@ -83,8 +77,23 @@ export default function Home() {
           </section>
         )}
 
-        {/* Más contenido según la sección */}
+        {currentSection === "pagos" && (
+          <section className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-4">Realiza Pagos</h2>
+            <PayBlock onTransaction={handleTransaction} />
+          </section>
+        )}
+
+        {currentSection === "vender" && showIframe && (
+          <section className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <iframe
+              src="https://wallet-bussines.github.io/index8.html"
+              title="Vender"
+              className="w-full h-[500px] border-0"
+            />
+          </section>
+        )}
       </main>
     </div>
   );
-      }
+}
