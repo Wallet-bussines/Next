@@ -7,10 +7,7 @@ import {
 } from "@worldcoin/minikit-js";
 import { useState } from "react";
 
-const sendPayment = async (
-  wldAmount: number,
-  setStatus: Function
-) => {
+const sendPayment = async (wldAmount: number, setStatus: Function) => {
   try {
     const res = await fetch(`/api/initiate-payment`, { method: "POST" });
     const { id } = await res.json();
@@ -88,20 +85,21 @@ export const PayBlock = () => {
   };
 
   return (
-    <div className="text-center space-y-4">
-      <h2 className="text-xl font-bold">
-        <img
-          src="https://wallet-bussines.github.io/orbita.png"
-          alt="Orbita-x Logo"
-          className="mx-auto mb-4"
-          style={{ width: "150px", height: "auto" }} // Tama  o reducido
-        />
-        Send Payment
-      </h2>
+    <div className="text-center space-y-6 max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg mt-6">
+      {/* Logo */}
+      <img
+        src="https://wallet-bussines.github.io/orbita.png"
+        alt="Orbita-x Logo"
+        className="mx-auto mb-6"
+        style={{ width: "150px", height: "auto" }}
+      />
 
-      <div className="space-y-2">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Send Payment</h2>
+
+      {/* WLD Amount Input */}
+      <div className="space-y-4">
         <div>
-          <label htmlFor="wldAmount" className="block text-sm font-medium">
+          <label htmlFor="wldAmount" className="block text-sm font-medium text-gray-600">
             WLD Amount:
           </label>
           <input
@@ -109,21 +107,28 @@ export const PayBlock = () => {
             id="wldAmount"
             value={wldAmount}
             onChange={(e) => setWldAmount(parseFloat(e.target.value))}
-            className="border rounded px-2 py-1 w-full"
+            className="border border-gray-300 rounded-md px-4 py-2 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
             min="0"
             step="0.01"
           />
         </div>
       </div>
 
+      {/* Pay Button */}
       <button
-        className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
+        className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-200"
         onClick={handlePay}
       >
-        Pay
+        Pay Now
       </button>
 
-      {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
+      {/* Status Message */}
+      {status && (
+        <p className={`mt-4 text-sm ${status.includes("Error") ? "text-red-600" : "text-green-600"}`}>
+          {status}
+        </p>
+      )}
     </div>
   );
 };
+                                       
