@@ -10,12 +10,16 @@ export default function Home() {
 
       {/* Barra de navegación fija en la parte inferior */}
       <nav className="bg-blue-600 text-white p-4 fixed bottom-0 w-full z-10">
-        <div className="flex justify-between items-center">
-          <div className="space-x-4">
-            <a href="#" className="hover:text-blue-300">Inicio</a>
-            <a href="#" className="hover:text-blue-300">Servicios</a>
-            <a href="#" className="hover:text-blue-300">Contacto</a>
-          </div>
+        <div className="flex justify-center items-center space-x-10">
+          <a href="/inicio" className="hover:text-blue-300">
+            Inicio
+          </a>
+          <a href="/servicios" className="hover:text-blue-300">
+            Servicios
+          </a>
+          <a href="/contacto" className="hover:text-blue-300">
+            Contacto
+          </a>
         </div>
       </nav>
     </div>
