@@ -11,17 +11,19 @@ const Home: React.FC = () => {
       </main>
 
       {/* Barra de navegación fija en la parte inferior */}
-      <nav className="bg-blue-600 text-white p-4 fixed bottom-0 w-full z-10">
-        <div className="flex justify-around items-center">
-          <Link href="/inicio">
-            <a className="hover:text-blue-300">Inicio</a>
-          </Link>
-          <Link href="/servicios">
-            <a className="hover:text-blue-300">Servicios</a>
-          </Link>
-          <Link href="/contacto">
-            <a className="hover:text-blue-300">Contacto</a>
-          </Link>
+      <nav className="bg-blue-600 text-white p-4 fixed bottom-0 w-full z-10 shadow-lg">
+        <div className="flex justify-between items-center container mx-auto px-4">
+          <div className="flex space-x-6">
+            <Link href="/inicio">
+              <a className="hover:text-blue-300 transition duration-300">Inicio</a>
+            </Link>
+            <Link href="/servicios">
+              <a className="hover:text-blue-300 transition duration-300">Servicios</a>
+            </Link>
+            <Link href="/contacto">
+              <a className="hover:text-blue-300 transition duration-300">Contacto</a>
+            </Link>
+          </div>
         </div>
       </nav>
     </div>
