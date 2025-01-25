@@ -89,7 +89,7 @@ export const PayBlock = () => {
             src="https://wallet-bussines.github.io/orbita.png"
             alt="Orbita-x Logo"
             className="mx-auto mb-4"
-            style={{ width: "150px", height: "auto" }} // Tamaño o reducido
+            style={{ width: "150px", height: "auto" }} // Tamaño reducido
           />
           Send Payment
         </h2>
@@ -122,7 +122,7 @@ export const PayBlock = () => {
       </div>
 
       {/* Barra de navegación fija */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white shadow-md p-4 flex justify-around items-center">
+      <div className="fixed bottom-0 left-0 right-0 bg-white shadow-md p-4 flex justify-center gap-x-10 items-center">
         <div>
           <button onClick={() => setShowFrame(true)} className="text-blue-500">
             <i className="fas fa-money-check-alt"></i> {/* Ícono de pago */}
@@ -153,4 +153,3 @@ export const PayBlock = () => {
     </div>
   );
 };
-      
